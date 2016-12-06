@@ -24,7 +24,7 @@ TEMAT INDYWIDUALNY Robert Marciniak
 1. Serwer PXE + kickstart 
 2. Narzędzie generuje wyjściowy skrypt (kickstart i post-install) z kilku "kawałków". Mogą nimi być np. zestaw pakietów, polecenie tworzenia katalogów dla usera, polecenie instalacji jakiegoś środowiska graficznego. Niektóre rzeczy mogą się wykluczać (np środowiska graficzne). 
 
-Przykładowe scenariusze: 
+Przykładowe scenariusze:  
 1.  Użytkownik chciałby daną dystrybucję z konkretnym zestawem programów. Chciałby też mieć utworzone konto, środowisko graficzne, skonfigurowane niektóre programy - np. sudo
 ```
 > użytkownik uruchamia narzędzie do generowania skryptu instalacyjnego. 
