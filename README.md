@@ -2,7 +2,7 @@
 Slice of config files and install scripts for automated PXE linux install.
 Not a functional repo, just collection of useful stuff to make it work.
 
-##Research:  
+###Research:  
   * Turns out other than RedHat, Ubuntu has some support for Kickstart installation:  
   [Ubuntu Kickstart documentation](https://help.ubuntu.com/community/KickstartCompatibility Kickstart Compatibility)  
   * RedHat:  
@@ -16,6 +16,10 @@ Not a functional repo, just collection of useful stuff to make it work.
 
   *  https://www.server-world.info/en/note?os=CentOS_7&p=pxe&f=2  
 
+
+###TODO:  
+[ ]  Uruchom instalacje z przykladowego pliku  
+[ ]  Dodaj repo Ubuntu ktore posiada kickstart config czy jak ten pakiet sie nazywa  
 
 
 Założenia:
