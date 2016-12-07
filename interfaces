@@ -1,0 +1,25 @@
+auto lo
+iface lo inet loopback
+
+# Make sure that these are assigned to right VBox network cards
+
+# NAT
+auto eth0
+allow-hotplug eth0
+iface eth0 inet dhcp
+
+# Internal network
+auto eth1
+allow-hotplug eth1
+iface eth1 inet static
+        address 192.168.0.1
+        netmask 255.255.255.0
+        broadcast 192.168.0.255
+        gateway 10.0.2.15
+
+# Host-only
+auto eth2
+allow-hotplug eth2
+iface eth2 inet static
+        address 192.168.56.123
+        netmask 255.255.0.0
