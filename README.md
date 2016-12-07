@@ -16,6 +16,9 @@ Not a functional repo, just collection of useful stuff to make it work.
 
   *  https://www.server-world.info/en/note?os=CentOS_7&p=pxe&f=2  
 
+  *  Building Ubuntu's system-config-kickstart under Debian  
+  [Debian system-config-kickstart](https://verahill.blogspot.com/2013/05/428-system-config-kickstart-on-debian.html)  
+
 
 ###TODO:  
 [ ]  Uruchom instalacje z przykladowego pliku  
