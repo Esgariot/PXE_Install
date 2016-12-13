@@ -20,6 +20,8 @@ This will become a beautiful parser and generator for preseed file for debian an
 
 
 ###TODO:  
+[ ] Boot using PXE  
+[ ] Make preseed file available  
 [ ] Generating pxelinux.cfg-valid entry and appending it to default.cfg  
 [ ] Add automatic locale setting in above in kernel params  
 [ ] write parser for preseed options  
