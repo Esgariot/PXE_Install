@@ -1,4 +1,8 @@
 MENU TITLE Autoinstall
+PATH menus/
+DEFAULT menus/vesamenu.c32
+TIMEOUT 1
+ONTIMEOUT Proceed
 
 LABEL Proceed
 	KERNEL $kernel
