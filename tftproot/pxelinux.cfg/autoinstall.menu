@@ -1,9 +1,13 @@
 MENU TITLE Autoinstall
 PATH menu/
 DEFAULT menu/menu.c32
-TIMEOUT 1
-ONTIMEOUT Proceed
+TIMEOUT 10
+ONTIMEOUT Proceeding
+ONERROR Reboot
 
 LABEL Proceed
 	KERNEL $kernel
 	APPEND $append
+
+LABEL Reboot
+	COM32 reboot.c32

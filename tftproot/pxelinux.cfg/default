@@ -11,3 +11,4 @@ LABEL autoinstall
 LABEL debian
 	KERNEL debian-installer/amd64/linux
 	APPEND vga=normal initrd=debian-installer/amd64/initrd.gz
+
