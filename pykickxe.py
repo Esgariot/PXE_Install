@@ -1,7 +1,5 @@
-import urllib
 import argparse
 import pykickxe_conf
-import tempfile
 import os
 
 
@@ -20,15 +18,17 @@ def downloadFromURL(args):  # TODO: Implement download #p1
         return
     if args.verbose is True:
         print 'downloading ' + args.distro + ' from ' + distroURL
-        os.system('wget ' + distroURL)  # TODO: check wget present #p2
+    # TODO: check if wget present #p2
+    os.system('wget ' + distroURL)
+
     # urllib.urlretrieve(distroURL) # TODO: Decide on this or wget #p3
     # TODO: Check if file already present #p1
     # TODO: Check filesum #p2
-    return  # TODO: return filename from url #p1
+    return  # fileName  # TODO: return filename from url #p1
 
 
 def parseArgs():
-    "Parser for cli arguements"
+    """Parser for cli arguements"""
     parser = argparse.ArgumentParser(
         prog='Pykickxe',
         description='A Python PXE and autoinstall tool')
@@ -73,7 +73,7 @@ def parseArgs():
 args = parseArgs()  # TODO: Add sensible options and check exclusivity #p3
 if args.list is True:
     listConfig()
-downloadFromURL(args)
+fileName = downloadFromURL(args)
 # TODO: Restructure parser to make sense #p2
 # parse_args() 
 
