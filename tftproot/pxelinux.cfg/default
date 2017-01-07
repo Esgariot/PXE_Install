@@ -1,9 +1,11 @@
-DEFAULT autoinstall
 PROMPT 0
 TIMEOUT 40
+ONTIMEOUT autoinstall
+path menus/
+default menus/vesamenu.c32
 
 LABEL autoinstall
-	KERNEL menu.c32
+	KERNEL vesamenu.c32
 	APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/autoinstall.menu
 
 LABEL debian
