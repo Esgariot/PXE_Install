@@ -1,0 +1,5 @@
+MENU TITLE Autoinstall
+
+LABEL Proceed
+	KERNEL $kernel
+	APPEND $append

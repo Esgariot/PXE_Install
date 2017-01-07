@@ -1,0 +1,11 @@
+DEFAULT autoinstall
+PROMPT 0
+TIMEOUT 40
+
+LABEL autoinstall
+	KERNEL menu.c32
+	APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/autoinstall.menu
+
+LABEL debian
+	KERNEL debian-installer/amd64/linux
+	APPEND vga=normal initrd=debian-installer/amd64/initrd.gz
