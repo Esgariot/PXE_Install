@@ -5,9 +5,8 @@ pxe_cfgPath = './pxeappend.cfg'
 ks_cfgPath = './ks.cfg'
 distroList = ['debian', 'fedora']
 fedoraURL = (
-    "https://download.fedoraproject.org/pub/fedora/linux/"
-    "releases/25/Workstation/x86_64/iso/"
-    "Fedora-Workstation-netinst-x86_64-25-1.3.iso")
+    "http://ftp.icm.edu.pl/pub/Linux/fedora/"
+    "linux/releases/25/Workstation/x86_64/os/images/pxeboot/*")  # doesnt work
 debianURL = (
     "http://ftp.nl.debian.org/debian/dists/jessie/"
     "main/installer-amd64/current/images/netboot/"

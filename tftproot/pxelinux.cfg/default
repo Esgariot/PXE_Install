@@ -1,8 +1,8 @@
 PROMPT 0
 TIMEOUT 40
 ONTIMEOUT autoinstall
-path menu/
-default menu/menu.c32
+path util/
+default util/menu.c32
 
 LABEL autoinstall
 	KERNEL menu.c32
@@ -12,3 +12,6 @@ LABEL debian
 	KERNEL debian-installer/amd64/linux
 	APPEND vga=normal initrd=debian-installer/amd64/initrd.gz
 
+LABEL fedora
+	KERNEL fedora/vmlinuz
+	APPEND vga=normal initrd=fedora/initrd.img inst.repo=https://dl.fedoraproject.org/pub/fedora/linux/development/25/Workstation/x86_64/os/

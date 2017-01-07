@@ -1,7 +1,7 @@
 MENU TITLE Autoinstall
-PATH menu/
-DEFAULT menu/menu.c32
-TIMEOUT 10
+PATH util/
+DEFAULT util/menu.c32
+TIMEOUT 20
 ONTIMEOUT Proceeding
 ONERROR Reboot
 
