@@ -1,6 +1,6 @@
 MENU TITLE Autoinstall
-PATH menus/
-DEFAULT menus/vesamenu.c32
+PATH menu/
+DEFAULT menu/menu.c32
 TIMEOUT 1
 ONTIMEOUT Proceed
 
