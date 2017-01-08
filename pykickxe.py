@@ -24,36 +24,15 @@ def downloadFromURL(args):  # TODO: Implement download #p1
     # urllib.urlretrieve(distroURL) # TODO: Decide on this or wget #p3
     # TODO: Check if file already present #p1
     # TODO: Check filesum #p2
-    return filePath  # TODO: return filename from url #p1
+    return filePath
 
 
-def unpackImage(args, fileName):
-    # modify using subprocess
-    # ISO_PATH = "your_iso_path_here"
-    # # Mount the ISO in your OS
-    # os.system("mkdir /media/tmp_iso")
-    # os.system("mount -o rw,loop %s /media/tmp_iso" % ISO_PATH)
-    # # Do your Pythonic manipulation here:
-    # new_file = open("/media/tmp_iso/.config", 'w')
-    # new_file.write(data)
-    # new_file.close()
-    # # Unmount
-    # os.system("umount /media/tmp_iso")
-    # os.system("rmdir /media/tmp_iso")
-    return
+def copyToTftp():
+    os.system('cp ./tftproot/. ' + pykickxe_conf.tftpRoot)
 
 
-def unpackArchive(args, fileName):
-    return
-
-
-def unpackDownloaded(args, fileName):
-    # TODO: Of cource this is ugly and wrong, use python-magic #p2
-    if '.iso' in fileName:
-        unpackImage(args, fileName)
-    elif '.tar.gz' in fileName:
-        unpackArchive(args, fileName)
-    return
+def writeToMenu():
+    menuPath = pykickxe_conf.tftpRoot + 'pxelinux.cfg/autoinstall.menu'
 
 
 def parseArgs():
@@ -73,11 +52,15 @@ def parseArgs():
         help='list some default options',
         action='store_true')
     parser.add_argument(
+        '-d',
+        '--download',
+        help='Download (not really working)',
+        action='store_true')
+    parser.add_argument(
         '-v',
         '--verbose',
         help='print some of what this is doing at any moment',
         action='store_true')
-
     parser.add_argument(
         '-t',
         '--tftp_root',
@@ -102,28 +85,6 @@ def parseArgs():
 args = parseArgs()  # TODO: Add sensible options and check exclusivity #p3
 if args.list is True:
     listConfig()
-filePath = downloadFromURL(args)
-# TODO: Restructure parser to make sense #p2
-# parse_args() 
-
-# assign to chosen distro
-# assign to tftp-root location
-# unpack() (iso or tar)
-
-
-# modify using subprocess
-
-# ISO_PATH = "your_iso_path_here"
-
-# # Mount the ISO in your OS
-# os.system("mkdir /media/tmp_iso")
-# os.system("mount -o rw,loop %s /media/tmp_iso" % ISO_PATH)
-
-# # Do your Pythonic manipulation here:
-# new_file = open("/media/tmp_iso/.config", 'w')
-# new_file.write(data)
-# new_file.close()
-
-# # Unmount
-# os.system("umount /media/tmp_iso")
-# os.system("rmdir /media/tmp_iso")
+if args.download is True:
+    filePath = downloadFromURL(args)
+copyToTftp()

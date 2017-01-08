@@ -8,10 +8,18 @@ LABEL autoinstall
 	KERNEL menu.c32
 	APPEND pxelinux.cfg/graphics.conf pxelinux.cfg/autoinstall.menu
 
-LABEL debian
-	KERNEL debian-installer/amd64/linux
-	APPEND vga=normal initrd=debian-installer/amd64/initrd.gz
+LABEL Debian
+	KERNEL debian/linux
+	APPEND ftinitrd=debian/initrd.gz
 
-LABEL fedora
+LABEL Fedora
 	KERNEL fedora/vmlinuz
-	APPEND vga=normal initrd=fedora/initrd.img inst.repo=https://dl.fedoraproject.org/pub/fedora/linux/development/25/Workstation/x86_64/os/
+	APPEND  initrd=fedora/initrd.img inst.repo=https://ftp-stud.hs-esslingen.de/pub/fedora/linux/releases/25/Everything/x86_64/os/
+
+LABEL CentOS
+	KERNEL centos/vmlinuz
+	APPEND initrd=centos/initrd.img method=ftp://192.168.0.2/centos/CentOS_ISO/ devfs=nomount ip=dhcp
+
+LABEL OpenSUSE
+	KERNEL opensuse/?
+	APPEND ?
