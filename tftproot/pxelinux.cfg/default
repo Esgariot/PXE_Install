@@ -10,15 +10,15 @@ LABEL autoinstall
 
 LABEL Debian
 	KERNEL debian/linux
-	APPEND ftinitrd=debian/initrd.gz
+	APPEND initrd=debian/initrd.gz
 
 LABEL Fedora
 	KERNEL fedora/vmlinuz
-	APPEND  initrd=fedora/initrd.img inst.repo=https://ftp-stud.hs-esslingen.de/pub/fedora/linux/releases/25/Everything/x86_64/os/
+	APPEND  initrd=fedora/initrd.img inst.repo=ftp://192.168.0.1/fedora/ISO devfs=nomount
 
 LABEL CentOS
 	KERNEL centos/vmlinuz
-	APPEND initrd=centos/initrd.img method=ftp://192.168.0.2/centos/CentOS_ISO/ devfs=nomount ip=dhcp
+	APPEND initrd=centos/initrd.img method=ftp://192.168.0.1/centos/ISO devfs=nomount ip=dhcp
 
 LABEL OpenSUSE
 	KERNEL opensuse/?

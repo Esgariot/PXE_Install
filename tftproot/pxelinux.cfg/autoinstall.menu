@@ -3,11 +3,8 @@ PATH util/
 DEFAULT util/menu.c32
 TIMEOUT 20
 ONTIMEOUT Proceeding
-ONERROR Reboot
+ONERROR COM32 reboot.c32
 
 LABEL Proceed
-	KERNEL $kernel
-	APPEND $append
-
-LABEL Reboot
-	COM32 reboot.c32
+	KERNEL centos/vmlinuz
+	APPEND initrd=centos/initrd.img method=ftp://192.168.0.1/centos/ISO devfs=nomount ip=dhcp 

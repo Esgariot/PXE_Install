@@ -1,8 +1,9 @@
-# TODO: Write a parser and make this a .conf file or something #p3
+# TODO: WRewrite #p1
 lastCheckedDate = '03.01.17'
-tftpRoot = '/svr/tftp/'
+tftpRoot = '/srv/tftp/'
 pxe_cfgPath = './pxeappend.cfg'
 ks_cfgPath = './ks.cfg'
+
 distroList = ['debian', 'fedora']
 fedoraURL = (
     "http://ftp.icm.edu.pl/pub/Linux/fedora/"
