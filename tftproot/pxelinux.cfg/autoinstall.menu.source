@@ -1,0 +1,10 @@
+MENU TITLE Autoinstall
+PATH util/
+DEFAULT util/menu.c32
+TIMEOUT 20
+ONTIMEOUT Proceeding
+ONERROR COM32 reboot.c32
+
+LABEL Automatic $DISTRO_NAME Installer
+	KERNEL $KERNEL
+	APPEND $APPEND $KS
