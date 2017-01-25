@@ -20,26 +20,6 @@ This will become a beautiful parser and generator for preseed file for debian an
      [Setting Up A PXE Install Server For Multiple Linux Distributions](https://www.howtoforge.com/ubuntu_pxe_install_server_p6)
   *  Syslinux.org, some mailing lists, dnsmasq & vsftp.conf man pages, bit of StackOverflow
 
-###Sprawozdanie:  
-1. Wstęp - żeby uruchomic sieciowo instalacje systemu potrzebne jest
-  * wsparcie dla PXE,
-  * serwer, który będzie udostępniał kernel i ramdisk,
-  * obraz kernela pxelinux.0
-  * drzewo konfiguracje pxelinux.0 w drzewie katalogów pxelinux.cfg
-  * poprawne wpisy do pxelinux.cfg/default - ścieżki do plików na serwerze, parametry kernela po APPEND  
-
-  w folderze tftproot znajdują się powyższe, z wyjątkiem plików związanych z dystrybucjami.  
-
-2. Po pobraniu uruchomieniu kernela i załadowaniu ramdisku z serwera tftp uruchomionego przez dnsmasq system szuka drzewa katalogów związanych z dystrybucją.
-  Znajduje wszystko, czego potrzebuje dzięki serwerowi vsftp (z jakiegoś powodu dnsmasqowy tftp nie udostępnia plików jako "normalny" ftp, tylko dla PXE).
-  W korzeniu serwera ftp jest katalog ```/<distro>/<wypakowane-iso>``` z którego pobiera pliki host na którym jest uruchomiona instalacja. Można też przeprowadzić instalację przez Internet i nie udostępniać całej dystrybucji na serwerze, ale ma to bardzo małe szanse powodzenia przez duże opóźnienie, które nie jest brane pod uwagę przez dracut
-3. Żeby to wszystko zautomatyzować do parametrów kernela RedHatowych dystrybucji dodaję ```ks= <ścieżka-do-pliku-kickstart>```
-4. Wszystko powyższe można zrobić manualnie, mój skrypt pykickxe.py dąży do zautomatyzowania tego ( z różną skutecznością ). Np. wybór pliku kickstart, kernela i parametrów
-  kernela odbywa się na zasadzie złożenia pliku kickstart, znalezieniu znaczników do zastąpienia zaczynających się od ```$``` w ```/pxelinux.cfg/autoinstall.menu``` i skopiowania pliku kickstart do ```/util/``` 
-
-
-
-
 
 
 ###Założenia:
